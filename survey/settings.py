@@ -1,4 +1,6 @@
 from os import environ
+from os.path import dirname, abspath
+BASE_DIR = dirname(dirname(abspath(__file__)))
 
 SESSION_CONFIGS = [
      dict(

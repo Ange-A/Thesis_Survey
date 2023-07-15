@@ -1,27 +1,27 @@
-{{ block title }}
-Page I:  Fashion Preferences
-{{ endblock }}
-{{ block content }}
+{% block title %}
+{% endblock %}
 
-<p>Hello & Welcome Welcome!!!
-<br>
-    <br>
-Thank you for assisting me into filling this survey and completing my MSC in Data Science& OB!
-<br>
-    <br>
-    Please know that no answer is wrong, and that you are free to answer as your heart deems.
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+  <div class="survey-container">
+    <div class="survey-content">
+      {% block survey_content %}
+      <h1>  Page I:   Fashion Preferences </h1>
+      <br>
+      <br>
+        <p>
+          Hello & Welcome Welcome!!!
+          <br><br>
+          Thank you for assisting me in filling out this survey and helping me complete my MSC in Data Science & OB!
+          <br><br>
+          Please know that no answer is wrong, and you are free to answer as your heart deems.
+          <br><br><br>
+        </p>
+      {% endblock %}
 
-
-    <br>
-    <br>
-    <br>
-
-
-</p>
-
-
-    {{ formfields }}
-    {{ next_button }}
-
-{{ endblock }}
+      {{ formfields }}
+      {{ next_button }}
+    </div>
+  </div>
+{% endblock %}

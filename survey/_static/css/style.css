@@ -1,0 +1,18 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("/static/img/Jean_Store1.jpeg");
+  background-size: cover;
+  background-position: center;
+}
+
+.survey-container {
+  position: relative;
+  z-index: 1; /* Bring the survey container forward */
+}
+
+.survey-content {
+  background-color: white;
+  padding: 20px;
+}
+
