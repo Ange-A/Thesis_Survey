@@ -1,9 +1,40 @@
 {{ block title }}
-Page IV: Lastly!
+
 {{ endblock }}
+
+
 {{ block content }}
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <div class="survey-container">
+    <div class="survey-content">
+      {% block survey_content %}
+      <h1>Page IV: Lastly!</h1>
+      <br>
+      <br>
+
+      {% endblock %}
 
     {{ formfields }}
     {{ next_button }}
+</div>
+  </div>
 
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("/static/img/belts.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+    color: #E55807;
+    font-size: 30px;
+   text-align: center;
+   font-weight: bold;
+    }
+  </style>
 {{ endblock }}

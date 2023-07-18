@@ -15,6 +15,9 @@ class Group(BaseGroup):
     pass
 
 
+
+
+
 class Player(BasePlayer):
     Title = models.StringField(
         label="Please select your title?",
@@ -179,6 +182,9 @@ def creating_session(subsession):
         player.condition = next(clist)
 
 
+class Introduction(Page):
+    pass
+
 class Demographics(Page):
     form_model = 'player'
     form_fields = ['Title', 'Age', 'Income', 'Fast', 'Definition', 'Preferences', 'Sus']
@@ -208,4 +214,4 @@ class Final(Page):
     form_fields = ['Rate', 'Likely', 'Recycled', 'Actually']
 
 
-page_sequence = [Demographics, Sustainability, Intervention0, Intervention1, Final]
+page_sequence = [Introduction, Demographics, Sustainability, Intervention0, Intervention1, Final]

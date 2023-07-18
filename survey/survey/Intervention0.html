@@ -1,14 +1,47 @@
-{{ block title }}
-Page III: Please Watch Carefully!
+{% block title %}
 {{ endblock }}
 
-{{ block content }}
-<br>
-<br>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/s4xnyr2mCuI" title="H&amp;M Conscious: Sustainable fashion through recycled clothes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
-    {{ formfields }}
-    {{ next_button }}
+<div class="survey-container">
+  <div class="survey-content">
+    {% block survey_content %}
+    <h1>Page III: Please Watch Carefully!</h1>
+    <br>
+
+    <div style="display: flex; justify-content: center;">
+      <iframe width="1280" height="720" src="https://www.youtube.com/embed/s4xnyr2mCuI" title="H&amp;M Conscious: Sustainable fashion through recycled clothes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+    {% endblock %}
+  </div>
+</div>
+
+<style>
+  body {
+    background-color: black;
+    color: #882200;
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  h1 {
+    color: #E55807;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .next-button {
+    color: orange;
+  }
+</style>
+
+{{ formfields }}
+<br>
+{% next_button %}
 
 {{ endblock }}
 

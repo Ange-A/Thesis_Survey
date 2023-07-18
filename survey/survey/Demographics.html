@@ -7,21 +7,42 @@
   <div class="survey-container">
     <div class="survey-content">
       {% block survey_content %}
-      <h1>  Page I:   Fashion Preferences </h1>
+      <h1>Page I: Fashion Preferences</h1>
       <br>
-      <br>
-        <p>
-          Hello & Welcome Welcome!!!
-          <br><br>
-          Thank you for assisting me in filling out this survey and helping me complete my MSC in Data Science & OB!
-          <br><br>
-          Please know that no answer is wrong, and you are free to answer as your heart deems.
-          <br><br><br>
-        </p>
+
+
       {% endblock %}
 
       {{ formfields }}
       {{ next_button }}
     </div>
   </div>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("/static/img/single.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+    color: #E55807;
+    text-align: center;
+    }
+
+   h3 {
+   text-align: center;
+
+   }
+
+   p{
+   text-align: center;
+   font-size: 20px;
+   }
+
+
+  </style>
 {% endblock %}

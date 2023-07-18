@@ -1,0 +1,75 @@
+{% block title %}
+{% endblock %}
+
+{% block content %}
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+  <div class="survey-container">
+    <div class="survey-content">
+      {% block survey_content %}
+      <h1></h1>
+      <br>
+      <br>
+
+        <h3>Hello & welcome</h3>
+
+        <br>
+        <br>
+
+       <p>
+           Thank you for filling out this survey and supporting me to complete my <div class="centered-text">Msc in Data Science & Organizational Behavior.</div>
+          <br>
+         <br>
+
+           <span style="color: #E55807;font-weight: bold; font-size: 22px; text-align: center;"> Please know that no answer is wrong, and you are free to answer as your heart deems!</span>
+          <br><br><br>
+        </p>
+      {% endblock %}
+
+      {{ formfields }}
+      {{ next_button }}
+    </div>
+  </div>
+
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-image: url("/static/img/single.jpeg");
+      background-size: cover;
+      background-position: center;
+    }
+
+    h1 {
+    color: #E55807;
+    text-align: center;
+    }
+
+   h3 {
+   font-size: 30px;
+   color: #E55807;
+   text-align: center;
+   font-weight: bold;
+
+   }
+
+   p{
+
+   font-size: 22px;
+   color: #164B60;
+   text-align: center;
+
+
+
+   }
+
+    .centered-text {
+    text-align: center;
+    font-size: 22px;
+    color: #164B60;
+  }
+
+
+  </style>
+{% endblock %}
