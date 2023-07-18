@@ -7,12 +7,17 @@
 <div class="survey-container">
   <div class="survey-content">
     {% block survey_content %}
-    <h1>Page III: Please Watch Carefully!</h1>
-    <br>
+
+
+       <h1>Page III: Please Watch Carefully! (1 Minute) </h1>
+
+       <br>
 
     <div style="display: flex; justify-content: center;">
-      <iframe width="1280" height="720" src="https://www.youtube.com/embed/s4xnyr2mCuI" title="H&amp;M Conscious: Sustainable fashion through recycled clothes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<iframe width="1424" height="563" src="https://www.youtube.com/embed/0v7f0KeNpv8" title="Wasted: Fast fashion is fueling our ecological crisis #beatpollution" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
+
+
     {% endblock %}
   </div>
 </div>
@@ -22,6 +27,7 @@
     background-color: black;
     color: #882200;
     background-size: cover;
+    background-image: url("/static/img/blurry.jpeg");
     background-position: center;
     margin: 0;
     padding: 0;
@@ -29,13 +35,19 @@
 
   h1 {
     color: #E55807;
-    font-size: 30px;
+    font-size: 28px;
     text-align: center;
     font-weight: bold;
   }
 
-  .next-button {
-    color: orange;
+ h2{
+  color: #E55807;
+  text-align: center;
+  }
+
+  p{
+    color: #164B60;
+    text-align: center;
   }
 </style>
 

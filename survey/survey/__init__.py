@@ -100,12 +100,12 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
 
-    Brands = models.StringField(
+    Influence = models.StringField(
         choices=[["Never", "Never"],
                  ["Sometimes", "Sometimes"],
                  ["Often", "Often"],
                  ["Frequently", "Frequently"]],
-        label="Do you think brands that call themselves sustainable are actually sustainable?",
+        label="Does sustainability influence your fashion item choices?",
 
         widget=widgets.RadioSelect,
     )
@@ -122,33 +122,23 @@ class Player(BasePlayer):
         widget=widgets.RadioSelect,
     )
 
-    Rate = models.StringField(
-        label="On a scale of 1-5, how did the previous video influence"
-              " you to like sustainable fast fashion items? "
-              "(With 1 being meh, and 5 being I am all about sustainability)",
-        choices=[
-            ["1", "1"],
-            ["2", "2"],
-            ["3", "3"],
-            ["4", "4"],
-            ["5", "5"]],
-
-        widget=widgets.RadioSelect,
-    )
 
     Likely = models.StringField(
         choices=[["Yes", "Yes"],
                  ["No", "No"]],
 
-        label="With consideration of your budget, would you spend an "
+        label="With consideration of your current budget, would you spend an "
               "extra 5 dollars to buy a sustainably manufactured fashion item?",
 
         widget=widgets.RadioSelect,
 
     )
 
+
+
     Recycled = models.StringField(
-        label="On a scale of 1-5, how likely are you to choose a recycled fashion item over a brand new one, "
+        label="On a scale of 1-5, how likely are you to choose a recycled/renewed "
+              "fashion item over a brand new one, "
               "to promote sustainable fashion?"
               "(With 1 being I dont care, and 5 being I would not hesitate)",
         choices=[
@@ -159,6 +149,22 @@ class Player(BasePlayer):
             ["5", "5"]],
 
         widget=widgets.RadioSelect,
+    )
+
+    Educated = models.StringField(
+        choices=[
+            ["1", "1"],
+            ["2", "2"],
+            ["3", "3"],
+            ["4", "4"],
+            ["5", "5"]],
+
+        label="After going through this survey, do you feel more knowledgeable about sustainable fast fashion? "
+              "(With 1 being I didn't learn much, and 5 being I completely understand "
+              "the importance of sustainable fast fashion)",
+
+        widget=widgets.RadioSelect,
+
     )
 
     Actually = models.StringField(
@@ -173,6 +179,8 @@ class Player(BasePlayer):
     )
 
     condition = models.IntegerField()
+
+
 
 
 def creating_session(subsession):
@@ -192,7 +200,7 @@ class Demographics(Page):
 
 class Sustainability(Page):
     form_model = 'player'
-    form_fields = ['Sustainable', 'Brands', 'Budget']
+    form_fields = ['Budget', 'Influence', 'Sustainable']
 
 
 class Intervention0(Page):
@@ -200,6 +208,11 @@ class Intervention0(Page):
         return player.condition == 0
 
     form_model = 'player'
+
+
+class Intervention0AdditionalPage(Page):
+    def is_displayed(player: Player):
+        return player.condition == 0
 
 
 class Intervention1(Page):
@@ -211,7 +224,7 @@ class Intervention1(Page):
 
 class Final(Page):
     form_model = 'player'
-    form_fields = ['Rate', 'Likely', 'Recycled', 'Actually']
+    form_fields = ['Recycled', 'Educated']
 
 
-page_sequence = [Introduction, Demographics, Sustainability, Intervention0, Intervention1, Final]
+page_sequence = [Introduction, Demographics, Intervention0AdditionalPage,  Sustainability, Intervention0, Intervention1, Final]

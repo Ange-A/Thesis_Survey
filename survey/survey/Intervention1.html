@@ -1,39 +1,51 @@
 {{ block title }}
-Page III: Please Watch Carefully!
 {{ endblock }}
+
 {{ block content }}
 <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
+<div class="survey-container">
+  <div class="survey-content">
       {% block survey_content %}
-      <h1>Page III: Please Watch Carefully!</h1>
+      <h1>Page III: Please Watch Carefully! (1 Minute) </h1>
       <br>
-      <br>
-      <br>
-<iframe width="1280" height="720" src="https://www.youtube.com/embed/khUE42xJmn4" title="The environmental costs of fast fashion | Energy Live News" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin: 0 auto;"></iframe>
-    {{ formfields }}
-    {{ next_button }}
+
+      <div style="display: flex; justify-content: center;">
+<iframe width="600" height="480" src="https://www.youtube.com/embed/Su13VdjtxCE" title="HBX SS23 Brand Campaign" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
 
 
 {{ endblock }}
 
- <style>
-    body {
-      background-color: black ;
-      color: #882200;
-      background-size: cover;
-      background-position: center;
+        </div>
+</div>
 
-    }
+<style>
+  body {
+    background-color: black;
+    color: #882200;
+    background-size: cover;
+    background-image: url("/static/img/blurry.jpeg");
+    background-position: center;
+    margin: 0;
+    padding: 0;
+  }
 
-    h1 {
+  h1 {
     color: #E55807;
-    font-size: 30px;
-   color: #E55807;
-   text-align: center;
-   font-weight: bold;
-    }
-  </style>
+    font-size: 28px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+
+
+
+</style>
+
     {{ formfields }}
+
+<br>
     {{ next_button }}
 
 {{ endblock }}
